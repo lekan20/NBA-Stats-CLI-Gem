@@ -17,7 +17,7 @@ class NbaTeamRecords::CLI
     while input != "exit"
       puts "Enter the number of the team you want the stats of, type list to see the team list, or write exit to exit:"
       input = gets.strip.downcase
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i < 30
         the_team = @team[input.to_i-1]
         puts <<~HEREDOC
         Team: #{the_team.name}
