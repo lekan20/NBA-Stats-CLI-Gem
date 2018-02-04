@@ -16,12 +16,15 @@ class NbaTeamRecords::Team
 
   end
 
-  def self.scrape_espn
+  def self.scrape_teams
     teams = []
     # go to espn, find the teams
     # extract the stats
     # instantiate a team
     # return an array of teams
+
+    teams << self.scrape_espn
+
     team_1 = self.new
     team_1.name = "Golden State Warriors"
     team_1.wins = "40"
@@ -55,6 +58,11 @@ class NbaTeamRecords::Team
     team_2.l10 = "8-2"
 
     teams
+  end
+
+  def self.scrape_espn
+    doc = Nokogiri::HTML(open(http://www.espn.com/nba/standings/_/group/league))
+    binding.pry
   end
 
 end
