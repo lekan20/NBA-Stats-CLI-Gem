@@ -1,4 +1,4 @@
-class NBATeamRecords::CLI
+class NbaTeamRecords::CLI
 
   def call
     puts "NBA Team Stats:"

@@ -1,5 +1,2 @@
-require "nba_team_records/version"
-
-module NbaTeamRecords
-  # Your code goes here...
-end
+require_relative "./nba_team_records/version"
+require_relative './nba_team_records/cli'
