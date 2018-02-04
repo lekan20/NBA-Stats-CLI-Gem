@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/nba_team_records'
+require "bundler/setup"
+require "nba_team_records"
 
 NbaTeamRecords::CLI.new.call
