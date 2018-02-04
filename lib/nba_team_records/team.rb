@@ -3,6 +3,7 @@ class NbaTeamRecords::Team
 
   def self.all
     # returns all the teams
+    self.scrape_espn
     puts "NBA Team Stats:"
     # puts <<~HEREDOC
     # 1. Golden State Warriors
@@ -12,6 +13,15 @@ class NbaTeamRecords::Team
     # 5. San Antonio Spurs
     # HEREDOC
 
+
+  end
+
+  def self.scrape_espn
+    teams = []
+    # go to espn, find the teams
+    # extract the stats
+    # instantiate a team
+    # return an array of teams
     team_1 = self.new
     team_1.name = "Golden State Warriors"
     team_1.wins = "40"
@@ -44,7 +54,7 @@ class NbaTeamRecords::Team
     team_2.streak = "W4"
     team_2.l10 = "8-2"
 
-    [team_1, team_2]
+    teams
   end
 
 end
