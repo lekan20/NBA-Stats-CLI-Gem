@@ -9,6 +9,7 @@ class NbaTeamRecords::CLI
   def list_teams
     # get list of nba teams
     @team = NbaTeamRecords::Team.all
+    @team.each.with_index(1) { |team, i| puts "#{i}. #{team.name}" }
   end
 
   def stats
@@ -16,13 +17,12 @@ class NbaTeamRecords::CLI
     while input != "exit"
       puts "Enter the number of the team you want the stats of, type list to see the team list, or write exit to exit:"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "Team 1 stats"
-      when "2"
-        puts "Team 2 stats"
-      when "list"
-        list_teams
+      if input.to_i > 0
+        puts @team[input.to_i-1]
+      elsif input == "list"
+        list_deals
+      else
+        puts "Not sure what you want, type list or exit."
       end
     end
   end
